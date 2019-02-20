@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int A,B,Da,Db,pa=0,pb=0;
+    cin>>A>>Da>>B>>Db;
+    while(A>0)
+    {
+        if(A%10==Da)
+        {
+            pa=pa*10+Da;
+        }
+        A/=10;
+    }
+    while(B>0)
+    {
+        if(B%10==Db)
+        {
+            pb=pb*10+Db;
+        }
+        B/=10;
+    }
+    cout<<pa+pb<<endl;
+    return 0;
+}

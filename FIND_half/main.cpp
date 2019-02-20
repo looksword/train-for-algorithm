@@ -1,0 +1,65 @@
+//输入n个学生的信息，然后进行查询
+//输入：
+//第一行为N,即学生的个数（N<=1000）
+//N行，包括N个学生的信息
+//学号 姓名 性别 年龄
+//输入一个M,表示有M行（M<=1000）查询
+//学号
+//输出：
+//M行，每行包括对应于查询的学生的信息，没有则输出“No Answer!”
+#include <stdio.h>
+#include<algorithm>
+#include<string.h>
+using namespace std;
+struct Student
+{
+    char No[100];//学号
+    char Name[100];//姓名
+    char Sex[5];//性别
+    int Age;//年龄
+    bool operator < (const Student & A)const
+    {
+        return strcmp(No,A.No) < 0;
+    }
+}Buf[1000];
+int main()
+{
+    int n;
+    while(scanf("%d",&n) != EOF)
+    {
+        for(int i = 0;i < n;i++)
+        {
+            scanf("%s%s%s%d",Buf[i].No,Buf[i].Name,Buf[i].Sex,&Buf[i].Age);//输入
+        }
+        sort(Buf,Buf + n);
+        int m;
+        scanf("%d",&m);
+        while(m-- != 0)
+        {
+            int ans = -1;
+            char x[30];
+            scanf("%s",x);
+            int top = n - 1,base = 0;
+            while(top >= base)
+            {//二分查找
+                int mid = (top + base) / 2;
+                int tmp = strcmp(Buf[mid].No,x);
+                if(tmp == 0)
+                {
+                    ans = mid;
+                    break;
+                }
+                else if(tmp > 0)
+                    top = mid - 1;
+                else
+                    base = mid + 1;
+            }
+            if(ans == -1)
+                printf("No Answer!\n");
+            else
+                printf("%s %s %s %d\n",Buf[ans].No,Buf[ans].Name,Buf[ans].Sex,Buf[ans].Age);
+        }
+        return 0;
+    }
+    return 0;
+}
