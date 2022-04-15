@@ -35,17 +35,17 @@
     - 计算G_m(x)的系数
 	    > \alpha_m=\frac 12log\frac {1-e_m}{e_m}
     - 更新训练数据集的权值分布
-	    > D_m+1=(w_{m+1,1},...,w_{m+1,i},...,w_{m+1,N})
+	    > D_m+1=(w_{m+1,1},...,w_{m+1,i},...,w_{m+1,N})  
 	    > w_{m+1,i}={w_mi/over Z_m}exp(-/alpha_my_iG_m(x_i))
 	    > =\begin{cases}
 	    > {w_mi/over Z_m}exp(-/alpha_m), G_m(x_i)=y_i
 	    > {w_mi/over Z_m}exp(/alpha_m), G_m(x_i)\ney_i
 	    > \end{cases}
-	    > i=1,2,...,N
-	    > (其中,Z_m是规范化因子:
-	    > Z_m=\sum_{i=1}^Nw_miexp(-/alpha_my_i,G_m(x_i)) )
+	    > i=1,2,...,N  
+	    > 其中,Z_m是规范化因子:  
+	    > Z_m=\sum_{i=1}^Nw_miexp(-/alpha_my_i,G_m(x_i))
 3. 构建基本分类器的线性组合
-    > f(x)=\sum_{m=1}^M/alpha_mG_m(x)
-    > 得到最终分类器
+    > f(x)=\sum_{m=1}^M/alpha_mG_m(x)  
+    > 得到最终分类器  
     > G(x)=sign(f(x))=sign(\sum_{m=1}^M/alpha_mG_m(x))
 ***
