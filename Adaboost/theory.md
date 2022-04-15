@@ -58,7 +58,7 @@ D_m+1=(w_{m+1,1},...,w_{m+1,i},...,w_{m+1,N})
 $$
 $$
 w_{m+1,i}={w_mi/over Z_m}exp(-/alpha_my_iG_m(x_i))
-$$
+$$  
 $$
 =
 \begin{cases}
@@ -66,8 +66,8 @@ $$
 {w_mi/over Z_m}exp(/alpha_m), G_m(x_i)\ney_i
 \end{cases}
 i=1,2,...,N
-$$
-其中,$Z_m$是规范化因子
+$$  
+其中,$Z_m$是规范化因子  
 $$
 Z_m=\sum_{i=1}^Nw_miexp(-/alpha_my_i,G_m(x_i))
 $$
