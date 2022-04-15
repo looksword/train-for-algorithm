@@ -28,10 +28,10 @@
 D_1=(w_11,w_12,...,w_1N),w_1i=\frac 1N,i=1,2,...,N
 
 2. 对$m=1,2,...,M$  
-+2.1 使用具有权值分布$D_m$的训练数据集学习，得到基本分类器 G_m(x):X\to{-1,+1}
-+2.2 计算$G_m(x)$在训练数据集上的分类误差率 e_m=\sum_{i=1}^NP(G_m(x_i)\ney_i)=\sum_{i=1}^Nw_miI(G_m(x_i)\ney_i)
-+2.3 计算$G_m(x)$的系数 \alpha_m=\frac 12log\frac {1-e_m}{e_m}
-+2.4 更新训练数据集的权值分布 D_m+1=(w_{m+1,1},...,w_{m+1,i},...,w_{m+1,N}) ; w_{m+1,i}={w_mi/over Z_m}exp(-/alpha_my_iG_m(x_i))
+    - 使用具有权值分布$D_m$的训练数据集学习，得到基本分类器 G_m(x):X\to{-1,+1}
+    - 计算$G_m(x)$在训练数据集上的分类误差率 e_m=\sum_{i=1}^NP(G_m(x_i)\ney_i)=\sum_{i=1}^Nw_miI(G_m(x_i)\ney_i)
+    - 计算$G_m(x)$的系数 \alpha_m=\frac 12log\frac {1-e_m}{e_m}
+    - 更新训练数据集的权值分布 D_m+1=(w_{m+1,1},...,w_{m+1,i},...,w_{m+1,N}) ; w_{m+1,i}={w_mi/over Z_m}exp(-/alpha_my_iG_m(x_i))
 =\begin{cases}
 {w_mi/over Z_m}exp(-/alpha_m), G_m(x_i)=y_i
 {w_mi/over Z_m}exp(/alpha_m), G_m(x_i)\ney_i
